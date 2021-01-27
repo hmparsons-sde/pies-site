@@ -1,0 +1,15 @@
+body {
+  background-color: bisque;
+}
+
+.img-container {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pie-form {
+  width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
