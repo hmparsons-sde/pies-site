@@ -143,7 +143,10 @@ const getFormInfo = (e) => {
     console.log(obj);
   }
 
+  // Pushing the new object up to the pies array
   pies.push(obj);
+
+  // Rebuilding the DOM
   pieBuilder(pies);
 
   document.querySelector('form').reset();
