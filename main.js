@@ -1,7 +1,7 @@
 const pies = [
   {
     name: 'Dutch Apple Pie',
-    ingredients: 'apples,sugar,butter,nutmeg,dutch people',
+    ingredients: 'apples, sugar, butter, nutmeg, dutch people',
     bakeTemp: 5000,
     drinkPairing: 'Earl Grey Tea',
     imageUrl:
@@ -50,8 +50,8 @@ const pies = [
     iceCream: 'Vanilla',
   },
   {
-    name: 'Keylime Pie',
-    ingredients: 'lemons, sugar, butter, flour',
+    name: 'Key Lime Pie',
+    ingredients: 'limes, sugar, butter, flour',
     bakeTemp: 5000,
     drinkPairing: 'Water',
     imageUrl:
@@ -120,12 +120,41 @@ const handleButtonClick = (e) => {
   }
 
 }
+const getFormInfo = (e) => {
+  (e) => {
+    e.preventDefault();
+    const name = document.querySelector('#name').value;
+    const ingredients = document.querySelector('#ingredients').value;
+    const bakeTemp = document.querySelector('#bakeTemp').value;
+    const drinkPairing = document.querySelector('#drinkPairing').value;
+    const imageUrl = document.querySelector('#imageUrl').value;
+    const instructor = document.querySelector('#instructor').value;
+    const iceCream = document.querySelector('#iceCream').value;
+
+    const obj = {
+      name,
+      ingredients,
+      bakeTemp,
+      drinkPairing,
+      imageUrl,
+      instructor,
+      iceCream,
+    }
+    console.log(obj);
+  }
+
+  pies.push(obj);
+  pieBuilder(pies);
+
+  document.querySelector('form').reset();
+}
 
 const buttonEvents = () => {
   document.querySelector('#All').addEventListener('click', handleButtonClick);
   document.querySelector('#Doc').addEventListener('click', handleButtonClick);
   document.querySelector('#Aja').addEventListener('click', handleButtonClick);
   document.querySelector('#Trinity').addEventListener('click', handleButtonClick);
+  document.querySelector('form').addEventListener('submit', getFormInfo)
 }
 
 const init = () => {
